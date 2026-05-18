@@ -1,0 +1,248 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background for consistency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main Container */
+.main {
+    background-color: #ffffff; /* White background for clarity */
+    padding: 30px;
+    border: 1px solid #000080; /* Navy blue border */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+}
+
+/* Heading */
+.main h2 {
+    color: #000080; /* Navy blue heading */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+}
+
+/* Labels and Inputs */
+label {
+    font-weight: bold;
+    color: #000080;
+    text-align: left;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #000080; /* Navy border for consistency */
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Submit Button */
+button {
+    padding: 10px;
+    background-color: #000080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Slightly lighter shade of navy */
+}
+
+/* Error and Success Messages */
+.error, .success {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.error {
+    background-color: #ffdddd; /* Light red background */
+    color: #a33a3a; /* Dark red text */
+    border: 1px solid #a33a3a;
+}
+
+.success {
+    background-color: #ddffdd; /* Light green background */
+    color: #3a8a3a; /* Dark green text */
+    border: 1px solid #3a8a3a;
+}
+
+/* Login Link */
+.login-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #000080; /* Navy blue link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    text-decoration: underline; /* Subtle hover effect */
+}
+Features of the CSS:
+Consistent Styling:
+Matches the contact page's design elements like colors, border radius, and shadows.
+Responsive:
+The container adapts to smaller screen sizes with max-width: 90%.
+User Feedback:
+Clear and distinct styles for error and success messages.
+Interactive Elements:
+Smooth hover effects for the button and link.
+You can save this CSS in forgot.css to integrate it with the forgot.php page. Let me know if you need further adjustments!
+
+
+
+
+
+
+You said:
+i want the same header and footer
+ChatGPT said:
+ChatGPT
+To add the same header and footer to your forgot password page, you can use the following approach. Ensure the header and footer match the styling and layout of the contact page.
+
+Updated forgot.php File:
+php
+Copy code
+<?php
+session_start();
+
+$reset_error = '';
+$reset_success = '';
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+
+    // Database connection parameters
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $database = 'reg';
+
+    // Establish database connection
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Use prepared statement to protect against SQL injection
+    $stmt = $conn->prepare("SELECT * FROM login WHERE email = ?");
+    $stmt->bind_param("s", $email);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $reset_success = "A password reset link has been sent to your email.";
+    } else {
+        $reset_error = "No account found with that email.";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="/IndiaEats/CSS/forgot.css">
+</head>
+<body>
+    <header>
+        <h1>IndiaEats</h1>
+    </header>
+    <nav>
+        <a href="/IndiaEats/home.php">Home</a>
+        <a href="/IndiaEats/about.php">About</a>
+        <a href="/IndiaEats/contact.php">Contact</a>
+    </nav>
+    <main>
+        <div class="main">
+            <h2>Forgot Password</h2>
+            <?php if (!empty($reset_error)): ?>
+                <div class="error"><?php echo $reset_error; ?></div>
+            <?php endif; ?>
+            <?php if (!empty($reset_success)): ?>
+                <div class="success"><?php echo $reset_success; ?></div>
+            <?php endif; ?>
+            <form action="forgot.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit" name="submit">Reset Password</button>
+            </form>
+            <a class="login-link" href="http://localhost/IndiaEats/login.php/">Back to Login</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 IndiaEats. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+CSS Updates:
+To ensure the header, nav, and footer match the contact page:
+
+Add these styles to forgot.css:
+
+css
+Copy code
+/* Header */
+header {
+    background-color: #000080;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000080;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #000080;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    width: 100%;
+}

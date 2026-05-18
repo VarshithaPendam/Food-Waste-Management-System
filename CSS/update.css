@@ -1,0 +1,158 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body stretches to at least the height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+
+        header {
+            background-color: #000080;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        header .header-content h1 {
+            margin: 0;
+            font-size: 2.5em; /* Large font for the main title */
+        }
+
+        header .header-content p {
+            margin-top: 5px;
+            font-size: 1.2em; /* Slightly smaller subtitle */
+        }
+
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+
+        .dropdown {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .dropdown img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        footer {
+            background-color: #000080;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            margin-top: auto; /* Pushes the footer to the bottom */
+            width: 100%; /* Ensures footer spans the entire width */
+        }
+
+        nav {
+            background-color: #000080;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        main {
+            flex: 1; /* Allows main content to expand and push footer down */
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Centers the form horizontally */
+            align-items: center; /* Centers the form vertically */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; /* Limits the width of the form */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: center; /* Aligns form labels to the center */
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left; /* Aligns label text to the left */
+        }
+
+        .form-group input, .form-group .gender-options {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .gender-options label {
+            display: inline-block;
+            width: auto;
+        }
+
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.875em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #000080;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 4px;
+        }
+
+        button.reset {
+            background-color: #f44336;
+        }
+    

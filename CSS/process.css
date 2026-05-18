@@ -1,0 +1,103 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-side {
+            width: 50%;
+            position: relative;
+        }
+
+        .left-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .right-side {
+            width: 50%;
+            padding: 40px;
+        }
+
+        .right-side h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .right-side form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-side label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .right-side input {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .right-side .checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .right-side .checkbox input {
+            margin-right: 10px;
+        }
+
+        .right-side .checkbox label {
+            font-size: 14px;
+        }
+
+        .right-side button {
+            padding: 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .right-side button:hover {
+            background-color: #e50070;
+        }
+
+        .right-side .signin {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .right-side .signin a {
+            color: #ff4081;
+            text-decoration: none;
+        }
+
+        .right-side .signin a:hover {
+            text-decoration: underline;
+        }
+    

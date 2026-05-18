@@ -1,0 +1,116 @@
+/* Body and general page layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: #000080; /* Navy blue background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%; /* Full width header */
+}
+
+header .header-content h1 {
+    margin: 0;
+    font-size: 2.5em; /* Large font for the main title */
+}
+
+header .header-content p {
+    margin-top: 5px;
+    font-size: 1.2em; /* Slightly smaller subtitle */
+}
+
+/* Main container for the login form */
+.main {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Heading inside the form */
+.main h2 {
+    color: #1316d1; /* Blue color for heading */
+    margin-bottom: 20px;
+}
+
+/* Form field labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Input fields and select styling */
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1316d1;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0e0f9b; /* Darker blue on hover */
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* Styling for the register and forgot password links */
+.register-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #1316d1;
+    font-size: 14px;
+}
+
+.register-link:hover {
+    color: #0e0f9b; /* Darker color on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #000080; /* Same navy blue as header */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 20px;
+}
